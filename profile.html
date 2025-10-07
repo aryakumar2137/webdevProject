@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #C0C0C0;
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+
+        main {
+            display: flex;
+        }
+
+        #left {
+            position: fixed;
+            left: 0%;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            font-size: 50px;
+        }
+
+        #left:hover {
+            color: #FFD966;
+            text-shadow: 0px 4px 5px #C0C0C0;
+            transition: color 0.8s ease, text-shadow 0.8s ease;
+        }
+
+        #right {
+            position: fixed;
+            right: 10%;
+            top: 20%;
+            height: 500px;
+            width: 40%;
+        }
+
+        #name:hover {
+            color: #FFD966;
+            transition: color 0.3s ease;
+        }
+
+        #college:hover {
+            color: blue;
+            transition: color 0.3s ease;
+        }
+
+        #india:hover #in {
+            color: orange;
+        }
+
+        #india:hover #d {
+            color: blue;
+        }
+
+        #india:hover #ia {
+            color: green;
+        }
+
+        #india span {
+            transition: color 0.3s ease;
+        }
+
+        #fin:hover {
+            color: #FF00FF;
+            transition: color 0.3s ease;
+        }
+
+        #ai:hover {
+            color: #FF00FF;
+            transition: color 0.3s ease;
+        }
+
+        #img {
+            box-shadow: 2px 2px 5px 5px #C0C0C0;
+        }
+
+
+
+        footer {
+            color: #C0C0C0;
+            display: flex;
+            justify-content: flex-end;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        @media(max-width: 1024px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            #left {
+                writing-mode: horizontal-tb;
+                transform: rotate(90deg);
+                font-size: 30px;
+                top: 20%;
+                margin-bottom: 20px;
+            }
+
+            #left:hover {
+                color: #FFD966;
+                text-shadow: 0px 4px 5px #C0C0C0;
+                transition: color 0.8s ease, text-shadow 0.8s ease;
+            }
+
+            #name:hover {
+                color: #FFD966;
+                transition: color 0.3s ease;
+            }
+
+            #college:hover {
+                color: blue;
+                transition: color 0.3s ease;
+            }
+
+            #india:hover #in {
+                color: orange;
+            }
+
+            #india:hover #d {
+                color: blue;
+            }
+
+            #india:hover #ia {
+                color: green;
+            }
+
+            #india span {
+                transition: color 0.3s ease;
+            }
+
+            #fin:hover {
+                color: #FF00FF;
+                transition: color 0.3s ease;
+            }
+
+            #ai:hover {
+                color: #FF00FF;
+                transition: color 0.3s ease;
+            }
+
+            #img {
+                box-shadow: 2px 2px 5px 5px #C0C0C0;
+            }
+
+            #right {
+                width: 90%;
+            }
+        }
+
+        @media(max-width: 600px) {
+            #right img {
+                max-width: 180px;
+            }
+
+            #right {
+                font-size: 14px;
+            }
+
+            #left {
+                font-size: 28px;
+            }
+
+            #left:hover {
+                color: #FFD966;
+                text-shadow: 0px 4px 5px #C0C0C0;
+                transition: color 0.8s ease, text-shadow 0.8s ease;
+            }
+
+            #name:hover {
+                color: #FFD966;
+                transition: color 0.3s ease;
+            }
+
+            #college:hover {
+                color: blue;
+                transition: color 0.3s ease;
+            }
+
+            #india:hover #in {
+                color: orange;
+            }
+
+            #india:hover #d {
+                color: blue;
+            }
+
+            #india:hover #ia {
+                color: green;
+            }
+
+            #india span {
+                transition: color 0.3s ease;
+            }
+
+            #fin:hover {
+                color: #FF00FF;
+                transition: color 0.3s ease;
+            }
+
+            #ai:hover {
+                color: #FF00FF;
+                transition: color 0.3s ease;
+            }
+
+            #img {
+                box-shadow: 2px 2px 5px 5px #C0C0C0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div></div>
+        <div>
+            <a href="portfolio1.html" style="text-decoration: none;"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAY1BMVEUAAAD////h4eGYmJjv7+/r6+suLi4rKyuUlJSBgYHS0tLy8vL39/cRERElJSXs7OwdHR0WFhZJSUlqampbW1szMzNlZWXJyclzc3MJCQmIiIggICAaGhqmpqbi4uK2trY6OjrqCUf+AAACBElEQVR4nO3cUVbCMBCF4Q6CFQQERRABYf+rFB48R6CpL0nHzv2/Fcw9SZqkbVJVAAAAAAAAAAAAAAAAAAAAAAAAAAAAyGf5+rZ69y6ioPXELkaHnXclhWzsx/TDu5YStiP75dO7nPzqoV1ZexeU2+PoOqA9e1eU2e42oNnYu6as9sO7gDbxLiqnuy4arZvWTQFtWnvXlc3spSlgoITzhjEYqpc2jsFIT5p5KmCU2WKW6KJhOmnd/JC5WHnXlkVyDJo9edeWxSLdgg/etWWxS47BIC3Y0kVjtGDzUi1QwG26i8YIeLujZwz2TXqpFiTgMvoYfIw+0Ycfg/voLZja0RvTRE+wVOs7lmp9t4s+TSzCd9F0CwYJmB6DNihnM+7q40fLbqKw6aGTgC1LtfIGiw4SDhwDmn1tiwc8ugY0O5YOeHIOaHYqnNC7Ccs3YstE0ZFh4YTe+c5ISMI/xB+H8Z+l8edD90YsvqYRWJcK7C3i7w8F9vgC72kE3rUJvC8VeOct8N1C4NuTwPdDibEY/ju+wL8YEh01/D9RAv+1CfybKDEWWcBFwAIugvBnZgTOPQmcXRM4fyhwhlTgHLDAWW6B8/gCdyoI3IshcLeJwP005wVc9DuGBO6JErjrS+C+tir+nXuVwL2JVfy7LwEAAAAAAAAAAAAAAAAAAAAAAAAAAP6rb01GHSHRz4b3AAAAAElFTkSuQmCC"
+                    style="height: 50px;" alt=""></a>
+        </div>
+    </nav>
+
+    <main>
+        <div id="left">
+            <h1>P R O F I L E</h1>
+        </div>
+        <div id="right">
+            <img src="mypic.jpg" alt="Sorry" style="height: 250px;" id="img">
+            <p>My name is <span id="name">Arya Kumar</span> and I am a first year student currently enroled in <span
+                    id="college">Scaler School of Technology</span>.
+                <br>Born and brought up through out <span id="india"><span id="in">In</span><span id="d">d</span><span
+                        id="ia">ia</span></span>.<br>I am a motivated, goal-oriented and college student pursuing a
+                degree in the field of computer science, With a strong interest in <span id="fin">financial
+                    engineering</span> and <span id="ai">Artificial intelligence</span>. I value teamwork, adaptability,
+                and continuous improvement, and I look forward to building experiences that shape both my professional
+                and personal journey.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <h2 id="rights">©2025 Arya Kumar All rights reserved</h2>
+    </footer>
+</body>
+
+</html>
